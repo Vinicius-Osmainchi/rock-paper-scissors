@@ -1,0 +1,25 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: Roboto;
+}
+
+body {
+  margin: 0;
+  padding: 0.5rem;
+  background: rgb(29, 29, 29);
+  font-family: Roboto;
+  color: aqua;
+  width: 98vw;
+  height: 98vh;
+}
+
+#root {
+ 
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
