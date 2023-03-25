@@ -1,6 +1,18 @@
-.box {
-    height: 80px;
-    width: 80px;
-    background: #6d6d6d;
-    border: #cabcbc 2px solid;
+.main-card {
+  justify-content: center;
+}
+.card-buttons {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+}
+
+.card-option {
+  cursor: pointer;
+}
+
+.card-option:hover {
+  border: 2px white solid;
+  opacity: 70%;
 }
