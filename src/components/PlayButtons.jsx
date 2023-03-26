@@ -12,17 +12,17 @@ const PlayButtons = (props) => {
       <Row className="d-flex justify-content-center">
         <Col xs="4" sm="4" md="4" lg="4" className="p-0">
           <Card bg="dark" id="Rock" className="card-option" onClick={clickHandler}>
-            <Card.Img id="Rock" src="images\rock.png" />
+            <Card.Img id="Rock" src="images\rock2.png" />
           </Card>
         </Col>
         <Col xs="4" sm="4" md="4" lg="4" className="p-0">
           <Card bg="dark" id="Paper" className="card-option" onClick={clickHandler}>
-            <Card.Img id="Paper" src="images\paper.png" />
+            <Card.Img id="Paper" src="images\paper2.png" />
           </Card>
         </Col>
         <Col xs="4" sm="4" md="4" lg="4" className="p-0">
           <Card bg="dark" id="Scissors" className="card-option" onClick={clickHandler}>
-            <Card.Img id="Scissors" src="images\scissors.png" />
+            <Card.Img id="Scissors" src="images\scissors2.png" />
           </Card>
         </Col>
       </Row>

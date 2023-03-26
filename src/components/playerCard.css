@@ -16,3 +16,31 @@
   border: 2px white solid;
   opacity: 70%;
 }
+
+.img-winner {
+  display: flex;
+  flex-shrink: initial;
+  height: 5rem;
+  position: absolute;
+  z-index: 1;
+}
+.img-draw {
+  display: flex;
+  flex-shrink: initial;
+  height: 10rem;
+  position: absolute;
+  z-index: 1;
+}
+
+.img-center {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.card-header {
+  display: flex;
+  min-height: 3rem;
+  align-items: center;
+  justify-content: center;
+}

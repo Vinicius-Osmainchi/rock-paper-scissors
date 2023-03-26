@@ -15,10 +15,16 @@ const initialPrompt = (props) => {
 
   const startHandler = () => {
     const settings = {
-      difficulty: (difficulty ? difficulty : 5),
+      difficulty: difficulty ? difficulty : 5,
       players,
     };
     props.onStart(settings);
+  };
+
+  const disableHandler = () => {
+    if (!players || players === 1 && !difficulty) {
+      return 'disabled';
+    }
   };
 
   return (
@@ -28,27 +34,27 @@ const initialPrompt = (props) => {
         <Card.Title>Please select the number of players.</Card.Title>
         <div className="mb-2">
           <ToggleButtonGroup type="radio" name="players" value={players} onChange={playersChangeHandler}>
-            <ToggleButton variant='light' id="tbg-player-1" value={1}>
+            <ToggleButton variant="light" id="tbg-player-1" value={1}>
               1 Player
             </ToggleButton>
-            <ToggleButton variant='light' id="tbg-player-2" value={2}>
+            <ToggleButton variant="light" id="tbg-player-2" value={2}>
               2 Players
             </ToggleButton>
           </ToggleButtonGroup>
         </div>
         <Card.Text>Please select the number of players.</Card.Text>
         <ToggleButtonGroup type="radio" name="difficulty" value={difficulty} onChange={difficultyHandler}>
-          <ToggleButton variant='light' id="tbg-radio-1" value={7} disabled={players === 1 ? '' : 'disabled'}>
+          <ToggleButton variant="light" id="tbg-radio-1" value={7} disabled={players === 1 ? '' : 'disabled'}>
             Easy
           </ToggleButton>
-          <ToggleButton variant='light' id="tbg-radio-2" value={5} disabled={players === 1 ? '' : 'disabled'}>
+          <ToggleButton variant="light" id="tbg-radio-2" value={5} disabled={players === 1 ? '' : 'disabled'}>
             Normal
           </ToggleButton>
-          <ToggleButton variant='light' id="tbg-radio-3" value={2} disabled={players === 1 ? '' : 'disabled'}>
+          <ToggleButton variant="light" id="tbg-radio-3" value={2} disabled={players === 1 ? '' : 'disabled'}>
             Hard
           </ToggleButton>
         </ToggleButtonGroup>
-        <Button variant='light' onClick={startHandler} className="mt-3">
+        <Button variant="light" onClick={startHandler} className="mt-3" disabled={disableHandler()}>
           START!
         </Button>
       </Card.Body>
