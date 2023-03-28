@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { Button, ToggleButton, ToggleButtonGroup } from 'react-bootstrap';
 import Card from 'react-bootstrap/Card';
-import './initialPrompt.css';
 
 const initialPrompt = (props) => {
   const [difficulty, setDifficulty] = useState(null);
@@ -22,16 +21,16 @@ const initialPrompt = (props) => {
   };
 
   const disableHandler = () => {
-    if (!players || players === 1 && !difficulty) {
+    if (!players || (players === 1 && !difficulty)) {
       return 'disabled';
     }
   };
 
   return (
-    <Card style={{ width: '17rem' }} className="text-center" bg="dark">
-      <Card.Header as="h4">Welcome to Lets Rock! Paper and Scissors too!</Card.Header>
+    <Card className="card-dark text-center" bg="dark">
+      <Card.Header as="h4">Welcome to Let's Rock! Paper and Scissors too!</Card.Header>
       <Card.Body>
-        <Card.Title>Please select the number of players.</Card.Title>
+        <Card.Title as='h6'>Please select the number of players.</Card.Title>
         <div className="mb-2">
           <ToggleButtonGroup type="radio" name="players" value={players} onChange={playersChangeHandler}>
             <ToggleButton variant="light" id="tbg-player-1" value={1}>
@@ -42,7 +41,7 @@ const initialPrompt = (props) => {
             </ToggleButton>
           </ToggleButtonGroup>
         </div>
-        <Card.Text>Please select the number of players.</Card.Text>
+        <Card.Text as='h6'>Please select the difficulty.</Card.Text>
         <ToggleButtonGroup type="radio" name="difficulty" value={difficulty} onChange={difficultyHandler}>
           <ToggleButton variant="light" id="tbg-radio-1" value={7} disabled={players === 1 ? '' : 'disabled'}>
             Easy
